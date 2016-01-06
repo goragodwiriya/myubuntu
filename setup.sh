@@ -11,12 +11,16 @@ sudo add-apt-repository -y ppa:yorba/ppa
 sudo add-apt-repository -y ppa:ondrej/php5-5.6
 sudo add-apt-repository -y ppa:kirillshkrogalev/ffmpeg-next
 sudo add-apt-repository -y ppa:paolorotolo/android-studio
+sudo add-apt-repository -y ppa:libreoffice/libreoffice-5-0
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get dist-upgrade
 
 # install application
 sudo apt-get install -y gksu aptitude synaptic gdebi-core gnome-system-monitor nautilus vlc git gimp gimp-data gimp-plugin-registry gimp-data-extras bleachbit flashplugin-installer unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller flac faac faad sox ffmpeg2theora libmpeg2-4 uudeview mpeg3-utils mpegdemux liba52-dev mpeg2dec vorbis-tools id3v2 mpg321 mpg123 icedax lame libmad0 libjpeg-progs libdvdread4 libdvdnav4 ubuntu-restricted-extras gedit chromium-browser pepperflashplugin-nonfree libavcodec-extra geary filezilla wine dconf-editor numlockx gnome-disk-utility audacious curl meld oracle-java7-installer oracle-java7-set-default ffmpeg python-software-properties dconf-editor
+
+# install libreoffice 5.0.x
+sudo apt-get install -y libreoffice
 
 # install Android Studio
 sudo apt-get install -y android-studio
