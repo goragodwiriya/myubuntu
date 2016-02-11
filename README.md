@@ -7,6 +7,6 @@ Shell script สำหรับการติดตั้ง Software พื้
 ## การใช้งาน
 
 `cd ~
-git clone https://github.com/goragod/myubuntu.git
-cd myubuntu
-sudo sh setup.sh`
+ git clone https://github.com/goragod/myubuntu.git
+ cd myubuntu
+ sudo sh setup.sh`
