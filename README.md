@@ -5,8 +5,7 @@ Shell script สำหรับการติดตั้ง Software พื้
 * โปรแกรม Android Studio สำหรับการเขียนแอนดร์อย
 
 ## การใช้งาน
-
- cd ~
- git clone https://github.com/goragod/myubuntu.git
- cd myubuntu
- sudo sh setup.sh
+cd ~
+git clone https://github.com/goragod/myubuntu.git
+cd myubuntu
+sudo sh setup.sh
