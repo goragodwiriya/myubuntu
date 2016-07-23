@@ -28,3 +28,4 @@ git clone https://github.com/goragod/myubuntu.git
 cd myubuntu
 sudo sh setup_sarah.sh
 ```
+การสลับไปใช้งาน PHP5.6 หรือ PHP7.0 สามารถทำได้โดยการรันโค้ด `phpsw.sh`
