@@ -20,3 +20,11 @@ git clone https://github.com/goragod/myubuntu.git
 cd myubuntu
 sudo sh setup16.04.sh
 ```
+
+## การใช้งาน MINT 18
+```
+cd ~
+git clone https://github.com/goragod/myubuntu.git
+cd myubuntu
+sudo sh setup_sarah.sh
+```
