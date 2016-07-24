@@ -70,6 +70,40 @@ if echo "$answer" | grep -iq "^y" ;then
 	if echo "$answer" | grep -iq "^y" ;then
 		sudo apt-get install php7.0 php7.0-gettext libapache2-mod-php7.0 php7.0-intl php7.0-mbstring php7.0-mcrypt php7.0-xml php7.0-mysql
 		sudo a2dismod proxy_fcgi proxy
+
+		# xdebug PHP 7.0
+		if [ -f '/etc/php/7.0/apache2/php.ini' ]; then
+			test="$(grep '/etc/php/7.0/apache2/php.ini' -e 'zend_extension="/usr/lib/php/20131226/xdebug.so"')"
+			if [ "$test" == "" ]; then
+				echo "" >> /etc/php/7.0/apache2/php.ini
+				echo '' >> /etc/php/7.0/apache2/php.ini
+				echo '# Added for xdebug' >> /etc/php/7.0/apache2/php.ini
+				echo 'zend_extension="/usr/lib/php/20131226/xdebug.so"' >> /etc/php/7.0/apache2/php.ini
+				echo 'xdebug.remote_enable=1' >> /etc/php/7.0/apache2/php.ini
+				echo 'xdebug.remote_handler=dbgp' >> /etc/php/7.0/apache2/php.ini
+				echo 'xdebug.remote_mode=req' >> /etc/php/7.0/apache2/php.ini
+				echo 'xdebug.remote_host=127.0.0.1' >> /etc/php/7.0/apache2/php.ini
+				echo 'xdebug.remote_port=9000' >> /etc/php/7.0/apache2/php.ini
+				echo 'xdebug.max_nesting_level=300' >> /etc/php/7.0/apache2/php.ini
+			fi
+		fi
+	fi
+
+	# xdebug PHP 5.6
+	if [ -f '/etc/php/5.6/apache2/php.ini' ]; then
+		test="$(grep '/etc/php/5.6/apache2/php.ini' -e 'zend_extension="/usr/lib/php/20131226/xdebug.so"')"
+		if [ "$test" == "" ]; then
+			echo "" >> /etc/php/5.6/apache2/php.ini
+			echo '' >> /etc/php/5.6/apache2/php.ini
+			echo '# Added for xdebug' >> /etc/php/5.6/apache2/php.ini
+			echo 'zend_extension="/usr/lib/php/20131226/xdebug.so"' >> /etc/php/5.6/apache2/php.ini
+			echo 'xdebug.remote_enable=1' >> /etc/php/5.6/apache2/php.ini
+			echo 'xdebug.remote_handler=dbgp' >> /etc/php/5.6/apache2/php.ini
+			echo 'xdebug.remote_mode=req' >> /etc/php/5.6/apache2/php.ini
+			echo 'xdebug.remote_host=127.0.0.1' >> /etc/php/5.6/apache2/php.ini
+			echo 'xdebug.remote_port=9000' >> /etc/php/5.6/apache2/php.ini
+			echo 'xdebug.max_nesting_level=300' >> /etc/php/5.6/apache2/php.ini
+		fi
 	fi
 
 	# restart apache
@@ -77,8 +111,10 @@ if echo "$answer" | grep -iq "^y" ;then
 fi
 
 # disabled apport
-sudo sed -i 's/enabled=1/enabled=0/g' /etc/default/apport
-sudo service apport stop
+if [ -f '/etc/default/apport' ]; then
+	sudo sed -i 's/enabled=1/enabled=0/g' /etc/default/apport
+	sudo service apport stop
+fi
 
 echo "Install Android Studio (y/n): "
 read answer
