@@ -14,7 +14,7 @@ if echo "$answer" | grep -iq "^y" ;then
 	sudo apt-get install -y curl meld oracle-java8-installer oracle-java8-set-default geary filezilla wine gedit chromium-browser git composer audacious mpv
 fi
 
-echo "Install LEMP (Apache PHP7.0 PHP5.6-DEV MySQL5.7 phpMyAdmin) (y/n): "
+echo "Install Apache PHP7.0 PHP5.6-DEV MySQL5.7 XDEBUG Phalcon Ice (y/n): "
 read answer
 if echo "$answer" | grep -iq "^y" ;then
 	sudo apt-get install -y apache2
@@ -44,7 +44,7 @@ if echo "$answer" | grep -iq "^y" ;then
 	fi
 
 	#install phalcon
-	echo "Install Phalcon PHP 5.6 (y/n): "
+	echo "Install Phalcon (PHP 5.6 only) (y/n): "
 	read answer
 	if echo "$answer" | grep -iq "^y" ;then
 		sudo git clone --depth=1 git://github.com/phalcon/cphalcon.git
@@ -55,7 +55,7 @@ if echo "$answer" | grep -iq "^y" ;then
 	fi
 
 	#install ice
-	echo "Install ice PHP 5.6 (y/n): "
+	echo "Install Ice (PHP 5.6 only) (y/n): "
 	read answer
 	if echo "$answer" | grep -iq "^y" ;then
 		git clone --depth=1 https://github.com/ice/framework.git
