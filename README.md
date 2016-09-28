@@ -21,11 +21,11 @@ cd myubuntu
 sudo sh setup16.04.sh
 ```
 
-## การใช้งาน MINT 18
+## การใช้งาน MINT 18 (16.04 LTS)
 ```
 cd ~
 git clone https://github.com/goragod/myubuntu.git
 cd myubuntu
-sudo sh setup_sarah.sh
+sudo sh setup_mint16.04.sh
 ```
 การสลับไปใช้งาน PHP5.6 หรือ PHP7.0 สามารถทำได้โดยการรันโค้ด `phpsw.sh`
